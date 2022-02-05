@@ -76,7 +76,7 @@ static Action OnRoundFreezeEnd(Event event, const char[] name,
 static void OnCvarChange(Handle convar, const char[] old_value,
                          const char[] new_value) {
   if (GetConVarBool(g_disable_round_timer_cvar)) {
-    DisableRoundTimer()
+    DisableRoundTimer();
   } else {
     EnableRoundTimer();
   }
@@ -94,6 +94,18 @@ public void OnPluginStart() {
   HookConVarChange(g_disable_round_timer_cvar, OnCvarChange);
   HookEvent("round_freeze_end", OnRoundFreezeEnd);
   HookEvent("round_start", OnRoundStart);
+
+  if (!GetConVarBool(g_disable_round_timer_cvar)) {
+    return;
+  }
+
+  DisableRoundTimer();
 }
 
-public void OnPluginEnd() { EnableRoundTimer(); }
+public void OnPluginEnd() {
+  if (!GetConVarBool(g_disable_round_timer_cvar)) {
+    return;
+  }
+
+  EnableRoundTimer();
+}
