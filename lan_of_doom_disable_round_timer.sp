@@ -78,7 +78,7 @@ static void OnCvarChange(Handle convar, const char[] old_value,
   if (GetConVarBool(g_disable_round_timer_cvar)) {
     DisableRoundTimer()
   } else {
-    DisableRoundTimer();
+    EnableRoundTimer();
   }
 }
 
@@ -88,7 +88,7 @@ static void OnCvarChange(Handle convar, const char[] old_value,
 
 public void OnPluginStart() {
   g_disable_round_timer_cvar =
-      CreateConVar("sm_lanofdoom_disable_round_timer", "1",
+      CreateConVar("sm_lanofdoom_round_timer_disabled", "1",
                    "If true, the round timer is disabled.");
 
   HookConVarChange(g_disable_round_timer_cvar, OnCvarChange);
