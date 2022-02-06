@@ -86,6 +86,10 @@ static void OnCvarChange(Handle convar, const char[] old_value,
 // Forwards
 //
 
+public void OnMapEnd() {
+  g_planted_c4_entity = INVALID_ENT_REFERENCE;
+}
+
 public void OnPluginStart() {
   g_disable_round_timer_cvar =
       CreateConVar("sm_lanofdoom_round_timer_disabled", "1",
