@@ -8,7 +8,7 @@ Extract ``lan_of_doom_disable_round_timer.tar.gz`` to your server's ``css/cstrik
 directory.
 
 ## Console Variables
-``sm_lanofdoom_disable_round_timer`` If ``1``, the round timer is disabled.
+``sm_lanofdoom_round_timer_disabled`` If ``1``, the round timer is disabled.
 ``1`` by default.
 
 ## Version History
