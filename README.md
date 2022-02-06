@@ -10,5 +10,5 @@ Copy ``lan_of_doom_disable_round_timer.smx`` to your server's
 
 # Console Variables
 
-``sm_lanofdoom_disable_round_timer`` If ``1``, the round timer is disabled.
+``sm_lanofdoom_round_timer_disabled`` If ``1``, the round timer is disabled.
 ``1`` by default.
