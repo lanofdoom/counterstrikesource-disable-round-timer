@@ -98,26 +98,10 @@ public void OnPluginStart() {
   HookConVarChange(g_disable_round_timer_cvar, OnCvarChange);
   HookEvent("round_freeze_end", OnRoundFreezeEnd);
   HookEvent("round_start", OnRoundStart);
-
-  if (!GetConVarBool(g_disable_round_timer_cvar)) {
-    return;
-  }
-
-  RoundState round_state = GameRules_GetRoundState();
-  if (round_state != RoundState_RoundRunning) {
-    return;
-  }
-
-  DisableRoundTimer();
 }
 
 public void OnPluginEnd() {
   if (!GetConVarBool(g_disable_round_timer_cvar)) {
-    return;
-  }
-
-  RoundState round_state = GameRules_GetRoundState();
-  if (round_state != RoundState_RoundRunning) {
     return;
   }
 
