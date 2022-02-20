@@ -26,6 +26,18 @@ static void DisableRoundTimer() {
     return;
   }
 
+  bool found_player = false;
+  for (int client = 1; client <= MaxClients; client++) {
+    if (IsClientInGame(client) && !IsFakeClient(client)) {
+      found_player = true;
+      break;
+    }
+  }
+
+  if (!found_player) {
+    return;
+  }
+
   g_round_time_left_when_disabled_ms =
       1000 * GameRules_GetProp(kRoundTimePropertyName);
   g_time_when_disabled_ms = GetSysTickCount();
@@ -75,12 +87,6 @@ static Action OnRoundFreezeEnd(Event event, const char[] name,
 
 static void OnCvarChange(Handle convar, const char[] old_value,
                          const char[] new_value) {
-  for (int client = 1; client <= MaxClients; client++) {
-    if (IsClientInGame(client) && !IsFakeClient(client)) {
-      return;
-    }
-  }
-
   if (g_disable_round_timer_cvar.BoolValue) {
     DisableRoundTimer();
   } else {
