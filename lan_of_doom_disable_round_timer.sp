@@ -3,7 +3,7 @@
 
 public const Plugin myinfo = {
     name = "Disable Round Timer", author = "LAN of DOOM",
-    description = "Disables the round timer", version = "1.0.0",
+    description = "Disables the round timer", version = "1.0.1",
     url =
         "https://github.com/lanofdoom/counterstrikesource-disable-round-timer"};
 
