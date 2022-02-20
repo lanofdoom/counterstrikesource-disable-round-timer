@@ -1,6 +1,6 @@
 ## Releases
 
-* [Latest](https://lanofdoom.github.io/counterstrikesource-disable-round-timer/releases/latest/lan_of_doom_disable_round_timer.tar.gz) ([Source](https://lanofdoom.github.io/counterstrikesource-disable-round-timer/releases/latest/lan_of_doom_disable_round_timer_source.tar.gz)) (1.0.0)
+* [Latest](https://lanofdoom.github.io/counterstrikesource-disable-round-timer/releases/latest/lan_of_doom_disable_round_timer.tar.gz) ([Source](https://lanofdoom.github.io/counterstrikesource-disable-round-timer/releases/latest/lan_of_doom_disable_round_timer_source.tar.gz)) (1.0.1)
 * [Nightly](https://lanofdoom.github.io/counterstrikesource-disable-round-timer/releases/nightly/lan_of_doom_disable_round_timer.tar.gz) ([Source](https://lanofdoom.github.io/counterstrikesource-disable-round-timer/releases/nightly/lan_of_doom_disable_round_timer_source.tar.gz))
 
 ## Installation
@@ -12,6 +12,8 @@ directory.
 ``1`` by default.
 
 ## Version History
+### 1.0.1 ([Download](https://lanofdoom.github.io/counterstrikesource-disable-round-timer/releases/v1.0.1/lan_of_doom_disable_round_timer.tar.gz)) ([Source](https://lanofdoom.github.io/counterstrikesource-disable-round-timer/releases/v1.0.1/lan_of_doom_disable_round_timer_source.tar.gz)) 
+* Only disable round timer if real players are connected
 
 ### 1.0.0 ([Download](https://lanofdoom.github.io/counterstrikesource-disable-round-timer/releases/v1.0.0/lan_of_doom_disable_round_timer.tar.gz)) ([Source](https://lanofdoom.github.io/counterstrikesource-disable-round-timer/releases/v1.0.0/lan_of_doom_disable_round_timer_source.tar.gz)) 
 * Initial Release
