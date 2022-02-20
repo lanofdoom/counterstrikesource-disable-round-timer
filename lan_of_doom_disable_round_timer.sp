@@ -64,7 +64,7 @@ static Action OnRoundStart(Event event, const char[] name,
 
 static Action OnRoundFreezeEnd(Event event, const char[] name,
                                bool dont_broadcast) {
-  if (!GetConVarBool(g_disable_round_timer_cvar)) {
+  if (!g_disable_round_timer_cvar.BoolValue) {
     return Plugin_Continue;
   }
 
@@ -75,7 +75,13 @@ static Action OnRoundFreezeEnd(Event event, const char[] name,
 
 static void OnCvarChange(Handle convar, const char[] old_value,
                          const char[] new_value) {
-  if (GetConVarBool(g_disable_round_timer_cvar)) {
+  for (int client = 1; client <= MaxClients; client++) {
+    if (IsClientInGame(client) && !IsFakeClient(client)) {
+      return;
+    }
+  }
+
+  if (g_disable_round_timer_cvar.BoolValue) {
     DisableRoundTimer();
   } else {
     EnableRoundTimer();
@@ -101,7 +107,7 @@ public void OnPluginStart() {
 }
 
 public void OnPluginEnd() {
-  if (!GetConVarBool(g_disable_round_timer_cvar)) {
+  if (!g_disable_round_timer_cvar.BoolValue) {
     return;
   }
 
